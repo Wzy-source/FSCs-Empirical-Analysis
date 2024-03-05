@@ -1,0 +1,14 @@
+digraph{
+0[label="Node Type: ENTRY_POINT 0
+"];
+0->1;
+1[label="Node Type: RETURN 1
+
+EXPRESSION:
+address(this).balance
+
+IRs:
+TMP_3 = CONVERT this to address
+TMP_4(uint256) = SOLIDITY_CALL balance(address)(TMP_3)
+RETURN TMP_4"];
+}

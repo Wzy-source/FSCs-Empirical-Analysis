@@ -1,0 +1,45 @@
+A decentralized autonomous organization (DAO), sometimes called a decentralized autonomous corporation (DAC),[a][1] is an organization managed in whole or in part by decentralized computer program, with voting and finances handled through a blockchain.[2][3][4] In general terms, DAOs are member-owned communities without centralized leadership.[5][6] The precise legal status of this type of business organization is unclear.[7][8]
+
+A well-known example, intended for venture capital funding, was The DAO, which amassed 3.6 million ether (ETH)—Ethereum's mining reward—then worth more than US$70 million in May 2016, and was hacked and drained of US$50 million in cryptocurrency weeks later.[9] The hack was reversed in the following weeks, and the money restored, via a hard fork of the Ethereum blockchain. Most Ethereum miners and clients switched to the new fork while the original chain became Ethereum Classic.
+
+The governance of DAOs is subject to controversy. As these typically allocate and distribute tokens that grant voting rights, their accumulation may lead to concentration of power.[10]
+
+Background
+Although the term may be traced back to the 1990s, it was not until 2013 that it became more widely adopted.[1] Although some argue that Bitcoin was the first DAO, the term is only understood today as organizations deployed as smart contracts on top of an existing blockchain network.[1]
+
+Decentralized autonomous organizations are typified by the use of blockchain technology to provide a secure digital ledger to track digital interactions across the internet, hardened against forgery by trusted timestamping and dissemination of a distributed database.[2][3][11] This approach eliminates the need to involve a mutually acceptable trusted third party in any decentralized digital interaction or cryptocurrency transaction.[3] The costs of a blockchain-enabled transaction and of the associated data reporting may be substantially offset by the elimination of both the trusted third party and of the need for repetitive recording of contract exchanges in different records. For example, the blockchain data could, in principle and if regulatory structures permit it, replace public documents such as deeds and titles.[2]: 42 [3] In theory, a blockchain approach allows multiple cloud computing users to enter a loosely coupled peer-to-peer smart contract collaboration.[2]: 42 [12]
+
+Vitalik Buterin proposed that after a DAO is launched, it might be organized to run without human managerial interactivity, provided the smart contracts are supported by a Turing-complete platform. Ethereum, built on a blockchain and launched in 2015, has been described as meeting that Turing threshold, thus enabling such DAOs.[2][13][14] Decentralized autonomous organizations aim to be open platforms through which individuals control their identities and their personal data.[15]
+
+Governance
+DAO governance is coordinated using tokens or NFTs that grant voting powers. Admission to a DAO is limited to people who have a confirmed ownership of these governance tokens in a cryptocurrency wallet, and membership may be exchanged. Governance is conducted through a series of proposals that members vote on through the blockchain,[16] and the possession of more governance tokens often translates to greater voting power.[10] Contributions from members towards the organizational goals of a DAO can sometimes be tracked and internally compensated. Inactive holders of governance tokens can be a major obstacle for DAO governance,[4] which has led to implementations allowing voting power to be delegated to other parties.
+
+Issues
+Social
+Tokens that grant voting powers are often not used to vote.[10] Inactive or non-voting shareholders in DAOs often disrupt the organization's possible functionality.[4]
+
+Another risk is the concentration of power in the case that individuals accumulate large amounts of tokens that grant voting power. Concentration of these tokens defeats the ambitions to distribute governance power. In a study of decentralized finance DAOs, the distribution of tokens was shown to be highly concentrated among a small population of holders.[10]
+
+Legal status, liability, and regulation
+The precise legal status of this type of business organization is generally unclear,[11] and may vary by jurisdiction. On July 1, 2021, Wyoming became the first US state to recognize DAOs as a legal entity.[17] American CryptoFed DAO became the first business entity so recognized.[18] Some previous approaches to blockchain based companies have been regarded by the U.S. Securities and Exchange Commission as illegal offers of unregistered securities.[7][19] Although often of uncertain legal standing, a DAO may functionally be a corporation without legal status as a corporation: a general partnership.[20] Known participants, or those at the interface between a DAO and regulated financial systems, may be targets of regulatory enforcement or civil actions if they are out of compliance with the law.[20]
+
+Some jurisdictions may recognize DAOs as legal entities, such as an LLC, trust or partnership, while others may view them as a type of contract or arrangement. Moreover, even if legalized in some places, they may still have to follow other laws and rules, such as those related to taxes, anti-money laundering, and data protection.[21]
+
+In June 2022, the venture capital firm Andreessen Horowitz published an "Entity selection framework" describing organizational alternatives for DAOs with a substantial presence in the United States.[22]
+
+Security
+A DAO's code is difficult to alter once the system is up and running, including bug fixes that would be otherwise trivial in centralized code. Corrections to a DAO require writing new code and agreement to migrate all the funds. Although the code is visible to all, it is hard to repair, thus leaving known security holes open to exploitation unless a moratorium is called to enable bug fixing.[23]
+
+In 2016, a specific DAO, "The DAO", set a record for the largest crowdfunding campaign to date.[24][25] Researchers pointed out multiple problems with The DAO's code. The DAO's operational procedure allowed investors to withdraw at will any money that had not yet been committed to a project; the funds could thus deplete quickly.[4] Although safeguards aimed to prevent gaming shareholders' votes to win investments,[7] there were a "number of security vulnerabilities".[26] These enabled an attempted large withdrawal of funds from The DAO to be initiated in mid-June 2016.[27][28] On July 20, 2016, the Ethereum blockchain was forked to bail out the original contract.
+
+DAOs can be subject to coups or hostile takeovers that upend its voting structures especially if the voting power is based upon the number of tokens one owns. An example of this occurred in 2022, when one individual collected enough tokens to give themselves voting control over Build Finance DAO, which they then used to drain the DAO of all its money.[29]
+
+List of notable DAOs
+Dash DAO	Dash	Dash (cryptocurrency) ecosystem management and self-funding[30][31][32]	Dash	September 2015[33][34]	Operational
+The DAO	DAO	Venture capital	Ethereum	April 2016	Defunct late 2016 due to hack[35]
+ConstitutionDAO	PEOPLE	Purchasing an original copy of the Constitution of the United States	Ethereum	November 2021[36]	Defunct[37]
+PleasrDAO	PEEPS	A group of art collectors who own the sole copy of the Wu Tang Clan album Once Upon a Time in Shaolin[38]	Ethereum	April 2021	Operational
+FreeRossDAO[39]	FREE	Clemency for Ross Ulbricht, criminal justice reform advocacy organization	Ethereum	December 2021[40]	Operational[citation needed]
+AssangeDAO	JUSTICE[41]	Purchased Clock, an NFT artwork by Pak, to fund legal defense of WikiLeaks' founder Julian Assange	Ethereum	February 2022[42]	Operational
+MakerDAO[43]	MKR	Dai (cryptocurrency) stablecoin maintainer and regulator, lender	Ethereum	December 2017	Operational
+Uniswap	UNI	Decentralized exchange (DEX), Automated Market Making (AMM)	Ethereum & Celo	November 2018	Operational[44]

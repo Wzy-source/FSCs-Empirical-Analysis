@@ -1,0 +1,90 @@
+Stablecoin
+A stablecoin is a type of cryptocurrency where the value of the digital asset is supposed to be pegged to a reference asset, which is either fiat money, exchange-traded commodities (such as precious metals or industrial metals), or another cryptocurrency.[1]
+
+In theory, 1:1 backing by a reference asset could make a stablecoin value track the value of the peg and not be subject to the radical changes in value common in the market for many digital assets.[2] In practice, however, stablecoin issuers have yet to be proven to maintain adequate reserves to support a stable value and there have been a number of failures with investors losing the entirety of the (fiat currency) value of their holdings.
+
+Background
+Stablecoins have several purported purposes. They can be used for payments and are more likely to retain value than highly volatile cryptocurrencies. In practice, many stablecoins have failed to retain their "stable" value.[citation needed]
+
+Stablecoins are typically non-interest bearing and therefore do not provide interest returns to the holder.[citation needed]
+
+Reserve-backed stablecoins
+Reserve-backed stablecoins are digital assets that are stabilized by other assets.[2] Furthermore, such coins, assuming they are managed in good faith and have a mechanism for redeeming the asset(s) backing them, are unlikely to drop below the value of the underlying physical asset, due to arbitrage. However, in practice, few, if any, stablecoins meet these assumptions.
+
+Backed stablecoins are subject to the same volatility and risk associated with the backing asset. If the backed stablecoin is backed in a decentralized manner, they are relatively safe from predation, but if there is a central vault, it may be robbed or suffer loss of confidence.
+
+Fiat-backed
+The value of stablecoins of this type is based on the value of the backing currency, which is held by a third party–regulated financial entity. Fiat-backed stablecoins can be traded on exchanges and are redeemable from the issuer. The stability of the stablecoin is equivalent to the cost of maintaining the backing reserve and the cost of legal compliance, licenses, auditors, and the business infrastructure required by the regulator.
+
+In this setting, the trust in the custodian of the backing asset is crucial for the stability of the stablecoin's price. If the issuer of the stablecoin does not actually possess the fiat necessary to make exchanges, the stablecoin can quickly lose value and become worthless.
+
+The most popular stablecoin, Tether, initially claimed to be fully backed by fiat currency; this was proven to be untrue, and Tether was fined $41 million by the Commodity Futures Trading Commission for deceiving consumers.[3] Instead, Tether only had enough fiat reserve to guarantee 27.6% of their stablecoin. Nevertheless, Tether still remains widely used.
+
+Cryptocurrencies backed by fiat currency are the most common and were the first type of stablecoins on the market.[citation needed] Their characteristics are:
+
+Their value is pegged to one or more currencies (most commonly the US dollar, the euro, and the Swiss franc) in a fixed ratio;
+The value connection is realized off-chain through banks or other types of regulated financial institutions which serve as depositaries of the currency used to back the stablecoin;
+The amount of the currency used to back the stablecoin should reflect the circulating supply of the stablecoin.
+Examples: TrueUSD (TUSD),[4] USD Tether (USDT),[5] USD Coin,[citation needed] Monerium EURe.[6]
+
+In January 2023, National Australia Bank (not Australia's central bank) announced that it would create by mid-2023 an Australian Dollar fiat-backed stablecoin called the AUDN, for streamlining cross-border banking transactions and trading carbon credits.[7]
+
+Commodity-backed
+The main characteristics of commodity-backed stablecoins are:
+
+Their value is fixed to one or more commodities and redeemable for such (more or less) on demand;
+There is an implied or explicit promise to redeem by unregulated individuals, agorist firms, or even regulated financial institutions;
+The amount of commodity used to back the stablecoin should reflect the circulating supply of the stablecoin.
+Holders of commodity-backed stablecoins can redeem their stablecoins at the conversion rate to take possession of the backing assets under whatever rules as to timing and amount are in place at the time of redemption. Maintaining the stability of the stablecoin is the cost of storing and protecting the commodity backing.
+
+Cryptocurrency-backed
+Cryptocurrency-backed stablecoins are issued with cryptocurrencies as collateral, conceptually similar to fiat-backed stablecoins. However, the significant difference between the two designs is that while fiat collateralization typically happens off the blockchain, the cryptocurrency or crypto asset used to back this type of stablecoins is done on the blockchain, using smart contracts in a more decentralized fashion. In many cases, these allow users to take out a loan against a smart contract via locking up collateral, making it more worthwhile to pay off their debt should the stablecoin ever decrease in value. In addition, to prevent sudden crashes, a user who takes out a loan may be liquidated by the smart contract should their collateral decrease too close to the value of their withdrawal.
+
+Significant features of crypto backed stablecoins are:
+
+The value of the stablecoin is collateralized by another cryptocurrency or a cryptocurrency portfolio;
+The peg is executed on-chain via smart contracts;
+The supply of the stablecoins is regulated on-chain, using smart contracts;
+price stability is achieved by introducing supplementary instruments and incentives, not just the collateral.
+The technical implementation of this type of stablecoins is more complex and varied than that of the fiat-collateralized kind, which introduces a greater risk of exploits due to bugs in the smart contract code. With the tethering done on-chain, it is not subject to third-party regulation creating a decentralized solution. The potentially problematic aspect of this type of stablecoins is the change in the value of the collateral and the reliance on supplementary instruments. The complexity and non-direct backing of the stablecoin may deter usage, as it may take time to comprehend how the price is ensured. Due to the highly volatile and convergent cryptocurrency market, substantial collateral must also be maintained to ensure stability.
+
+Live stablecoins projects of this type are Havven (the pair: nUSD – stablecoin and HAV – the collateral-backed nUSD),[8] DAI (pair: CDP – Collateralized Debt Position and MKR – governance token used to control the supply)[9] and others. There is also Wrapped Bitcoin (WBTC), see BitGo.
+
+Seigniorage-style/algorithmic stablecoins (not backed)
+Seigniorage-style coins, also known as algorithmic stablecoins, utilize algorithms to control the stablecoin's money supply, similar to a central bank's approach to printing and destroying currency. Seigniorage-based stablecoins are a less popular form of stablecoin.[10]
+
+Algorithmic stablecoins are a type of stablecoin intended to hold a stable value over the long term because of particular computer algorithms and game theory rather than a peg to a reserve asset.[11] In practice, some algorithmic stablecoins have yet to maintain price stability. For example, the "UST" asset on the Terra blockchain was theoretically supported by a reserve asset called "Luna", and plummeted in value in May 2022. Wired magazine said, "The Ponzinomics were just too obvious: When you pay money for nothing, and stash your nothing in a protocol with the expectation that it will give you a 20 percent yield—all you end up with is 20 percent of nothing."[11]
+
+Significant features of seigniorage-style stablecoins are:[10]
+
+Adjustments are made on-chain,
+No collateral is needed to mint coins,
+Value is controlled by supply and demand through algorithms, stabilizing the price.
+Basis was one example of a seigniorage-style coin.[10]
+
+TerraUSD (UST), created by Do Kwon, was meant to maintain a 1:1 peg with the United States dollar.[12] Instead of being backed by dollars, UST was designed to keep its peg through a complex system connected with another Terra network token, Terra (LUNA).[13] In May 2022 UST broke its peg with its price plunging to 10 cents,[14] while LUNA fell to "virtually zero", down from an all-time high of $119.51.[15] The collapse wiped out almost $45 billion of market capitalization over the course of a week.[16]
+
+On 13 June 2022, Tron's algorithmic stablecoin, USDD, lost its peg to the US Dollar.[17]
+
+Possible advantages
+The Bank of International Settlements lists the possible merits of the subject as enhancement of anti-money laundering efforts, operational resilience, customer data protection, financial inclusion, tax compliance, and cybersecurity.[18]
+
+Risks and criticisms
+Lack of regulation
+Nellie Liang, Under Secretary of the Treasury for Domestic Finance reported to the Senate banking committee that the rapid growth of the stablecoin market capitalization and its potential for financial services innovation require urgent congressional regulation.[19]
+
+Lack of transparency
+Tether is currently the world's largest market capitalization stablecoin. It has been accused of failing to produce audits for reserves used to collateralize the quantity of minted USDT stablecoin.[20] Tether has since issued assurance reports on USDT backing, although some speculation persists.[21]
+
+De-pegging
+Many projects can advance a product and call it a stablecoin. Thus, despite the name, many stablecoins have historically needed more stability because digital assets can be built to many different standards. Stablecoins such as TerraUSD, USDD, DEI and others crashed to zero in 2022 alone.[citation needed]
+
+Other concerns
+Griffin and Shams' research attributed the creation of unbacked USDT to the rise in Bitcoin's price in 2017.[22] Following that, research indicated little to no evidence that Tether USD minting events influenced Bitcoin values unless they were publicized to the public by Whale Alert.[23][24][25]
+
+Failed and abandoned stablecoin projects
+A number of stablecoins have crashed or lost their peg. For example:
+
+The stablecoin project Basis, which had received over $100 million in venture capital funding, shut down in December 2018, citing concerns about US regulation.[26]
+On 11 May 2022, Terra's stablecoin UST fell from $1 to 26 cents.[27][28] The subsequent failure of Terraform Labs resulted in the loss of nearly $40B invested in the Terra and Luna coins.[29] In September 2022, South Korean prosecutors requested the issuance of an Interpol Red Notice against the company's founder, Do Kwon.[30]
+Diem (formerly Libra) was abandoned by Facebook/Meta and later purchased by Silvergate Capital.

@@ -1,0 +1,60 @@
+A decentralised application (DApp,[1] dApp,[2] Dapp, or dapp) is an application that can operate autonomously, typically through the use of smart contracts, that run on a decentralized computing, blockchain or other distributed ledger system.[3] Like traditional applications, DApps provide some function or utility to its users. However, unlike traditional applications, DApps operate without human intervention and are not owned by any one entity, rather DApps distribute tokens that represent ownership.[3] These tokens are distributed according to a programmed algorithm to the users of the system, diluting ownership and control of the DApp. Without any one entity controlling the system, the application is therefore decentralised.
+
+Decentralised applications have been popularised by distributed ledger technologies (DLT), such as the Ethereum or Cardano blockchain, on which DApps are built, amongst other public blockchains.[4]
+
+DApps are divided into numerous categories: exchanges, businesses, gambling, games, finance, development, storage, wallet, governance, property, identity, media, social, security, energy, insurance, health, etc.[5][clarification needed]
+
+Definition
+There are a series of criteria that must be met in order for an application to be considered a DApp.
+
+Traditional definitions of a decentralised application require a DApp to be open-source. That is, the application operates autonomously without a centralised entity in control of the majority of the application’s associated tokens.[3] DApps also have a public, decentralised blockchain that is used by the application to keep a cryptographic record of data, including historical transactions.[3]
+
+Although traditional DApps are typically open-source, DApps that are fully closed-source and partially closed-source have emerged as the cryptocurrency industry evolves. As of 2019, only 15.7% of DApps are fully open-source while 25% of DApps are closed source. In other words, the proportion of DApps with publicly available code is less than the proportion of Dapps without publicly available code.[5] DApps that are open-source generally have higher transaction volumes than closed-source DApps.[5]
+
+Bitcoin, the first cryptocurrency, is an example of a DApp.[6]
+
+Usage
+DApps can be classified based on whether they operate on their own block chain, or whether they operate on the block chain of another DApp.
+
+Smart contracts
+Main article: smart contract
+Smart contracts are used by developers to maintain data on the block chain and to execute operations.[5] Multiple smart contracts can be developed for a single DApp to handle more complex operations.[5] Over 75% of DApps are supported by a single smart contract, with the remainder using multiple smart contracts.[5]
+
+DApps incur gas, that is fees paid to the validators of the block chain, due to the cost of deploying and executing the DApp's smart contracts.[5] The amount of gas required of a DApp's functions is dependent on the complexity of its smart contracts.[5] A complex smart contract of a DApp that operates on the Ethereum blockchain may fail to be deployed if it costs too much gas, leading to lower throughput and longer wait times for execution.[5]
+
+Operation
+Consensus mechanisms are used by DApps to establish consensus on the network. The two most common mechanisms to establish consensus are proof-of-work (POW) and proof-of-stake (POS).[7]
+
+Proof-of-work utilises computational power to establish consensus through the process of mining.[8] Bitcoin uses the proof-of-work mechanism.[8] Proof-of-stake is a consensus mechanism that supports DApps through validators that secure the network by having a stake and percent ownership over the application.[8]
+
+
+A Bitcoin mining rig composed of dozens of graphics processing units
+DApps distribute their tokens through three main mechanisms: mining, fund-raising and development.[7] In mining, tokens are distributed as per a predetermined algorithm as rewards to miners that secure the network through transaction verification.[7] Tokens can also be distributed through fundraising, whereby tokens are distributed in exchange for funding in the initial development phase of the DApp, as in an initial coin offering.[7] Lastly, the development mechanism distributes tokens that are set aside for the purpose of developing the DApp through a pre-determined schedule.[7]
+
+There are three main steps that always occur in the formation and development of any DApp: the publishing of the DApp’s whitepaper, the distribution of initial tokens, and the distribution of ownership.[7] Firstly, the whitepaper is published, describing the DApp’s protocols, features and implementation.[7] Then, required software and scripts are made available to the miners and stakeholders that support the validation and fundraising of the network.[7] In exchange, they are rewarded with the initial tokens distributed by the system.[7] Lastly, as greater numbers of participants join the network, either through utilisation of the DApp or through contributions to the DApp’s development, token ownership dilutes, and the system becomes less centralised.[7]
+
+Characteristics
+DApps have their backend code running on a decentralized peer-to-peer network, as opposed to typical applications where the backend code is running on centralized servers. A DApp can have frontend code and user interfaces written in any language that can make calls to its backend.
+
+DApps have been utilized in decentralized finance (DeFi), in which dapps perform financial functions on blockchains.[9] Decentralized finance validating peer-to-peer transactions to disrupt centralized finance and lower the cost.[10]
+
+The performance of a DApp is tied to its latency, throughput, and sequential performance.[11] Bitcoin's system for transaction validation is designed so that the average time for a Bitcoin to be mined is 10 minutes.[11] Ethereum offers a reduced latency of one transaction every 15 seconds. For comparison, Visa handles approximately 10,000 transactions per second.[11][12] More recent DApp projects, such as Solana, have attempted to exceed that rate.[13]
+
+Internet connectivity is a core dependency of blockchain systems, which includes DApps.[11] High monetary costs also act as a barrier. Transactions of small monetary values can comprises a large proportion of the transferred amount.[11] Greater demand for the service also leads to increased fees due to increased network traffic.[14] This is an issue for Ethereum, which is attributed to increased network traffic caused by DApps built on the Ethereum blockchain, such as those used by Non-fungible tokens (NFTs).[14] Transaction fees are affected by the complexity of a DApp's smart contracts, and by the particular blockchain.[15]
+
+Trends
+Ethereum is the distributed ledger technology (DLT) that has the largest DApp market.[15] The first DApp on the Ethereum blockchain was published on April 22, 2016.[15] From May 2017, the number of DApps being developed have grown at a higher rate.[15] After February 2018, DApps have been published every day.[15] Less than one fifth of DApps capture almost all the DApp users on the Ethereum blockchain.[15] About 5% of DApps capture 80% of Ethereum transactions.[15] 80% of DApps on Ethereum are used by less than 1000 users.[15] On Ethereum, DApps that are exchanges capture 61.5% of transaction volume, finance DApps capture 25.6%, gambling DApps capture 5%, high-risk DApps capture 4.1%, and games capture 2.5%.[15]
+
+DApps have not achieved wide adoption. Potential users may not have the skill or knowledge to be able to effectively analyse the differences between DApps and traditional applications, and also may not value those differences. This skill and information can be difficult to access for mainstream users. Additionally, the user experience for DApps is often poor, as they are often developed to prioritize functionality, maintenance and stability.[16]
+
+Many DApps struggle to attract users, particularly in their founding stages, and even those that attract widespread initial popularity struggle to retain it.[full citation needed]
+
+A notable example was the DApp CryptoKitties, which heavily slowed down the Ethereum network at the height of its popularity.[17] CryptoKitties and another similar gaming-based DApp Dice Games have failed to attract similar traction since.[18][needs update]
+
+Examples
+Augur[19] – prediction market platform.
+Cryptokitties – game built on Ethereum.[11] It slowed Ethereum down due to insufficient transaction processing and exposed the scaling limitations of public blockchains.[20]
+Stacks project – a platform for developing decentralized applications.[21]
+Freelance – platform on smart contract.
+Steemit – blogging and social media.[11]
+Uniswap – a decentralized cryptocurrency exchange.[22]

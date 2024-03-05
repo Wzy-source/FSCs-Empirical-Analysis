@@ -1,0 +1,108 @@
+Real-World Use Cases for Smart Contracts and dApps
+Discover how smart contract use cases are revolutionizing the world around us, as well as how many experts see smart contract utility expanding in the future.
+Summary
+A smart contract is self-executing code that carries out a set of instructions, which are then verified on the blockchain. They are a core technological element of many decentralized applications (dApps). A key characteristic of smart contracts is that they are trustless, meaning they can reduce or even eliminate the need for third-party intermediaries. Read on to learn how smart contracts are impacting the worlds of finance, real estate, healthcare, gaming, and more.
+Introduction: What Are Smart Contracts?
+Smart contracts are one of the key components of many blockchain-based ecosystems, and an especially important element of many application-focused blockchains like Ethereum. These digital contracts are trustless, autonomous, decentralized, and transparent — and are usually irreversible and unmodifiable once deployed. Smart contract advantages include reducing — or even removing — the need for intermediaries and contract enforcement in an agreement or transaction. That’s because with a smart contract, the code defines the mechanisms of the transaction and is the final arbiter of the terms. For this reason, smart contracts have become the building blocks of an entire ecosystem of decentralized applications (dApps) and represent a major focal point of blockchain development in general.
+
+A solitary smart contract can only be used for one transaction type: If something happens, then something else happens. However, most dApps work by bundling smart contracts together to enable a sophisticated, synergistic set of functionalities. There are thousands of dApps across various blockchain networks, including finance, gaming, exchanges, and media — and they can all utilize smart contracts in different ways and to different ends. Examples of smart contract applications include financial purposes like trading, investing, lending, and borrowing. They can be used for applications in gaming, healthcare, and real estate; and they can even be used to configure entire corporate structures. In this article, we’ll cover some of the real world examples of smart contracts and dApps, and explore their potential to shape the future as well.
+
+Smart Contract Use Cases in Finance
+Decentralized finance (DeFi) dApps represent a formidable alternative to traditional financial services, and they are growing in popularity thanks to the trustless, immutable, and transparent characteristics of blockchain and smart contract technology. DeFi dApps provide parallel services to the banking and financial services industry — like lending, borrowing, trading, and a host of other financial services — along with entirely new types of products and decentralized business models that can offer considerable benefit and utility for users. With the increased transparency furnished by smart contracts (along with 24/7 functionality, and reduced costs), dApps have the potential to lower the barriers to entry into the financial services arena for people all over the world.
+
+DeFi projects have already captured billions of U.S. dollars in value and look to continue this trend as more and more people become familiar with the unique value propositions of the sector. Users can participate in this new generation of financial services without the need for centralized custody or fees from intermediaries. Although the DeFi sector is only a few years old, given the number of innovative dApps that are already providing value and utility to consumers, the effects of smart-contract-powered dApps on the financial industry are already being felt.
+
+NFTs and Smart Contracts: Blockchain Technology in Gaming
+The global gaming industry is a hundred-billion dollar ecosystem that continues to grow quickly, but the way value is created and distributed throughout the industry can be inequitable. Developers make and release games, and players pay to play and interact with those games. This perpetuates a one-directional flow of value where players spend money to unlock access to in-game assets and gameplay configurations. In contrast, blockchain technology in gaming can enable players to capture the utility and value of in-game purchases and asset acquisitions more effectively.
+
+Blockchain technology in gaming is commonly driven by non-fungible tokens (NFTs) — unique digital assets that represent in-game content. NFTs rely on smart contracts. These tokens are unique, rare, and indivisible, while the blockchain networks that underpin NFTs facilitate player ownership, provable scarcity, interoperability, and immutability. Together, these characteristics of blockchain in gaming have the potential to drive mainstream adoption and a more equitable value model.
+
+Thanks to the implementation of blockchain technology in the gaming industry, you can save in-game purchases, sell them to other players, or move them into other supported games. Meanwhile, the scarcity of in-game NFT purchases is provable through the immutable records embedded in an NFT’s underlying blockchain network — as is its history of ownership. Because NFTs are unique and can be designed to retain value beyond the game in which they originated, blockchain-built games and dApps have the potential to expand gaming economies, establish new gaming categories, and fuel development of new games. Blockchains with significant gaming development include Ethereum, TRON, EOSIO, and NEO.
+
+Smart Contracts and Blockchain in the Legal Industry
+Perhaps one of the most promising real world smart contract use cases is their potential to function as legally binding contracts — the kind that inform most of today’s business engagements. Technology has been driving innovation in the legal industry, most recently with the advent of e-signatures for binding legal agreements. Smart contracts represent another new development in this space, and may soon be an option for parties to legal agreements, potentially lowering the costs incurred from using lawyers and other intermediaries.
+
+The widespread use of bespoke smart contracts for myriad types of transactions that can lower costs and increase transaction speeds may be closer than you think. Some U.S. states have begun to permit the use of smart contracts and blockchain in the legal industry in certain contexts. For example, Arizona allows enforceable legal agreements to be created via smart contracts, and California allows marriage licenses to be issued via blockchain technology.
+
+Blockchain in Real Estate
+Through tokenization, smart contracts are advancing the fractional ownership of assets and thus lowering the barrier to entry for investment for many by merging blockchain and real estate transactions. In particular, there have been a number of successful endeavors in tokenizing real estate assets, including via platforms like RealT and SolidBlock that fuse blockchain and real estate. Smart contract technology can also rework the documentation and transaction processes by incorporating blockchain in real estate transactions. For example, the Republic of Georgia (in the Caucasus region) has been developing a blockchain-based land title registry since 2016, and similar projects are underway in other jurisdictions such as the United Arab Emirates (UAE).
+
+Anyone who has purchased a home or other property is likely aware of the potential for hidden costs connected to closing fees, title transfers, and broker fees. These are costs that might be reduced or even eliminated by automatically executing smart contracts that function free of intermediaries. When a piece of property is tokenized, much of the required record-keeping can take place via associated smart contracts, which can save the parties time and money. Some experts even claim that smart contracts can benefit parties by streamlining rental agreements and complex credit or mortgage agreements, as well as warranties and insurance. By using smart contracts and blockchain in real estate, the need for legal counsel or other advisory services becomes less crucial, potentially cutting costs across the board.
+
+Smart Contracts Uses in Corporate Structures: Building DAOs
+In 2017, Delaware passed Senate Bill 69, which allows businesses to be incorporated and managed using blockchain technology. This bill opened the door to the proliferation of decentralized autonomous organizations (DAOs), which function as corporations wherein ownership and compensation can be built into smart contracts. DAOs, using smart contracts to encode corporate structures, can enable sophisticated, automatically enforced incentive structures within a corporate framework. DAOs can also drive savings in administrative costs including office space, hiring, and payroll through incentive structures that may not include formal employment contracts.
+
+Applications of Smart Contracts in Emerging Technology
+One of the most exciting applications of blockchain technology and associated smart contract technology is the ability to facilitate complex computational tasks like those involved in machine learning and artificial intelligence (AI). By combining the data intensive processing of AI with the decentralized security and immutability of blockchain technology, there is potential to create AI-powered smart contracts. As smart contract applications become implemented across various industries, they will need to become increasingly complex to accommodate their new roles. While rudimentary smart contract use cases can be manually designed, AI-enabled smart contracts might allow for the construction of highly complex, more responsive, enterprise-grade smart contracts and dApps that have the potential to dramatically expand the capabilities of the technology.
+
+Many experts postulate that the fields of AI and blockchain may benefit from each other’s defining characteristics. Smart contracts can benefit from the advanced computational capabilities and adaptive systems of AI technology, while AI implementations could utilize smart contract technology for its autonomous execution of sets of rules and to provide a secure environment for sensitive and valuable machine learning data to exist. Zilliqa is one of the many blockchain platforms that is developing advanced computational capabilities with its proprietary smart contract programming language, Scilla, and advanced parallel processing structure enabled by sharding.
+
+Potential Smart Contract Advantages in Other Industries
+This list of real world applications of smart contracts is by no means exhaustive, and smart contract technology stands to improve upon countless other industries far into the future. Many researchers and developers are eager to leverage the benefits of smart contract technology to address needs of the growing Internet of Things (IoT). While blockchain technology in general is already being used to lend security and transparency to IoT devices, smart contract advantages may further this integration.
+
+Healthcare is another industry that has begun to integrate blockchain technology for secure, trustless, transparent data sharing. The relationship between healthcare and blockchain technology may also be bolstered by the integration of smart contracts and entire dApps designed to solve key healthcare pain points such as interoperability, identification, and authentication challenges. With all of these established use cases, and the ongoing discovery and development of many more, smart contracts and dApps are poised to continue revolutionizing the world of digital agreements.
+
+Voting and Blockchain Implementation of Smart Contracts
+Using Blockchain in the voting process can eliminate common problems. A centralized voting system faces difficulties when it comes to tracking votes – identity fraud, miscounts, or bias by voting officials. Using a smart contract, certain predefined terms and conditions are pre-set in the contract. No voter can vote from a digital identity other than his or her own. The counting is foolproof. Every vote is registered on a blockchain network, and the counting is tallied automatically with no interference from a third party or dependency on a manual process. Each ID is attributed to just one vote. Validation is accomplished by the users on the blockchain network itself. Thus, the voting process can be in a public blockchain, or it could be in a decentralized autonomous organization-based blockchain setup. As a result, every vote is recorded on the ledger, and the information cannot be modified. That ledger is publicly available for audit and verification.
+
+Smart contracts allow you to create voting systems in which you can add and remove members, change voting rules, change debating periods, or alter the majority rule. For instance, you can create a vote for a decision within a decentralized autonomous organization. Rather than a central authority making a decision, a voting mechanism within the organization can determine whether the proposal is accepted or rejected.
+
+Blockchain Implementation of a Smart Contract and Crowdfunding
+Ethereum-based smart contracts may be used to create digital tokens for performing transactions. You may design and issue your own digital currency, creating a tradable computerized token. The tokens use a standard coin API. In the case of Ethereum, there are standardizations of ERC 2.0, allowing the contract to access any wallet for exchange automatically. As a result, you build a tradable token with a fixed supply. The platform becomes a central bank of sorts, issuing digital money.
+
+Suppose you want to start a business requiring funding. But who would lend money to someone they don't know or trust? Smart contracts have a major role to play. With Ethereum, you can build a smart contract to hold a contributor's funds until a given date passes or a goal is met. Based on the result, the funds are released to the contract owners or sent back to the contributors. The centralized crowdfunding system has many issues with management systems. To combat this, a DAO (Decentralized Autonomous Organization) is utilized for crowdfunding. The terms and conditions are set in the contract, and every individual participating in crowdfunding is given a token. Every contribution is recorded on the Blockchain.
+
+Smart contract use cases and applications
+Aside from the payments example mentioned above, there are various, potential implementations of smart contracts that can automate the world and make it an easier place to live. Here are some prominent examples of smart contract use cases.
+
+Digital identity
+On the internet, information is currency. Companies profit off of knowing everyone’s interests, and people are not always in control of how that data is acquired, nor do they profit from it. With smart contracts, people are in control.
+
+In a blockchain-based future, identities will be tokenized. Ideally, this would mean each person’s identity exists on a blockchain, safe and secure from any bad actors. Now, if a user wants to participate on social media or submit documents to a bank for loan purposes, they can profit from the former and control the transaction process in the latter.
+
+For social media, no intermediary controls a network. Instead, users choose what information to make public and what to keep private. Should they want to participate in information exchange, like an endorsement, they can create a smart contract and choose what data is transacted, rather than simply gleaning everything about a user. A third party isn’t there to take some of the funds or secretly store and sell that data — only the user profits.
+
+The same applies when it comes to dealing with banks and other financial institutions. Communication only involves sending required documents and vital information over. There’s no risk of a loan group storing your email address and selling it to other credit companies. That info is entirely under the user’s control.
+
+Real estate
+In the traditional world, real estate brokers are a necessary evil. Considering the act of selling a house is nothing short of long and convoluted, owners will hire a broker to manage the confusing parts for them, such as the paperwork and finding a buyer. While that sounds ideal for the seller, remember that brokers take a significant fee from the house’s sale price.
+
+A smart contract can take the place of a broker, streamlining the house transfer process while ensuring it’s just as secure as with an intermediary. This is where the “trustless” moniker comes into play.
+
+Imagine the deed to your house is tokenized on the Ethereum blockchain. If you’re ready to sell it, you’d create a smart contract with the buyer. That contract would hold the deed in escrow until the buyer’s funds are properly submitted. That said, everyone wins. The seller saves money, as they don’t have to pay an intermediary, and the buyer gets the house much sooner than they would have otherwise.
+
+Insurance
+Insurance policies could easily benefit from smart contracts. Essentially, signing up for a policy would enter the user into a smart contract with a provider. All policy requirements would be written into the smart contract, which the user would read and sign if they agree.
+
+That contract would sit open until the liable party needs it. Then, they’d simply upload the required forms that prove their need for insurance payment and the funds would be released. This type of contract removes the need for communicating with insurance groups and individuals. While the user would still need paperwork to prove their requirements, the subsequent submission and funding process will be close to instant.
+
+In the identity aspect of things, it’s worth keeping in mind that all drivers will have a record of their accident reports and other important insurance information as well. This accessibility could factor into lower rates for good drivers with no dings on their driving history.
+
+Supply chain
+Arguably, one of the most popular implementations of blockchain technology and smart contracts, in particular, is within a supply chain.
+
+Grocery stores, office warehouses, farmers and more all have their specific place in a supply chain. But with how complex these networks are becoming, companies are finding it increasingly harder to track product custody and follow payments, among other things. Smart contracts can automate and incentivize all parts of the supply chain to increase their accountability.
+
+Suppose a company in Europe wants to purchase a shipment of goods from a supplier in Asia.
+
+It could automate every step of the transaction, from ordering to delivery, using a smart contract. All pertinent information, such as the product specifications, shipping information, terms of payment and deadlines for the fulfillment, would be included in the smart contract.
+
+In order to guarantee that the items are in accordance with the buyer’s expectations, the smart contract would also include conditions for the product’s quality and quantity. The use of intermediaries, like banks or brokers, and the fees associated with them would be unnecessary because the contract is self-executing and non-negotiable.
+
+The money would be kept in escrow once the contract is signed until the supplier certifies that the products have been delivered. The blockchain would track and save the delivery schedules and shipment information, giving both parties complete visibility and transparency.
+
+When the goods are delivered and the buyer certifies that they meet the agreed-upon parameters, the smart contract will instantly release the payments to the provider. Due to the lack of intermediaries and decreased risk of fraud, this method would be effective, efficient and secure.
+
+Use Cases of Smart Contracts
+The use cases for smart contracts range from simple to complex.
+They can be used for simple economic transactions, such as moving money from point A to point B, as well as for smart access management in the sharing economy.
+Smart contracts could disrupt many industries.
+Banking, insurance, energy, e-government, telecommunications, the music business, art, mobility, education, and many other industries have use cases.
+Technical Use-Cases
+Legal Use-Cases
+Economic Use-Cases
+Self-verifying
+Self-executing
+Tamper resistance
+It can map legal obligations into an automated process. If implemented correctly, they can provide a greater degree of contractual security
+Higher transparency Fewer intermediaries Lower transaction costs

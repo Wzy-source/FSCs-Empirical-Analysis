@@ -1,0 +1,195 @@
+A Look at Smart Contract Voting with Compound
+Governance has become increasingly important in defining and executing how a protocol makes critical decisions in an equitable manner, with the goal of enabling participation in protocol-level modifications that affect the future of a protocol for all participants. Blockchain, web3, and smart contracts are putting the power back in the hands of the people with examples like Compound.
+
+In this blog, we explore governance voting at the smart contract level. It’s also important to note that Anchorage Digital makes governance voting secure and simple. Read below to learn more about exploration on the smart contract layer.
+
+Why blockchains and web3 favor governance
+
+Blockchain technology is building the foundation for the next form of the Internet, becoming popularly known as “web3”. In this web3 world, value and use are intertwined through a series of transactions between blockchain wallets and smart contracts. This web3 world enables participation that was once centralized to a small group of individuals or entities to now be accessible to a wider audience. One such form of participation is governance, i.e. the power to make decisions for a project. In this world, projects can take many forms such as a DAO, a blockchain protocol, a decentralized app, or any endeavor that requires orchestration and incentivization, like a charity.
+
+
+“Decentralized, on-chain governance is imperative for the success of open protocols. The Governor and COMP token contract voting system was initially designed so that it can be built upon externally by developers to create delightful user experiences. Crypto custodians like Anchorage Digital can enable their customers to participate in governance seamlessly while minimizing the risk that is inherently involved when interacting with blockchains.”
+
+— Adam Bavosa, Developer Relations Lead, Compound Labs
+
+This post will explore decentralized governance, beginning with an overview of the topic and followed by a deeper look at smart contracts on Compound. Compound, as one of the first projects to fully transition protocol decisions to a system of community governance, presents a clear model for understanding governance transactions and how they work.
+
+Understanding governance
+
+Every new protocol needs to determine how to allocate its resources and how it will make decisions to evolve. Many of these projects use smart contracts to automate decisions, and the way these decisions are formulated is known as “governance”.
+
+Using smart contracts and voting from a community is known as “tokenized governance”, and has grown in popularity in the form of “DAOs” (decentralized autonomous organizations). DAOs can automate and distribute decision-making at any organizational level, with use cases as wide-ranging as running a company to raising charitable funds. In crypto, they are most commonly used to govern blockchain-level decisions.
+
+Tokenized governance allows any tokenholder to participate in decisions that affect the priorities and technical developments on a blockchain. Some protocols allow tokenholding participants to simply vote “Yes” and “No” on its proposals, calculating the relative weight of that vote in respect to the number of tokens held by the participant.
+
+Other protocols have built more complex voting paradigms. One example is quadratic voting, where each additional vote on a proposal option costs the participant increasingly more. This has been implemented by having the protocol distribute voting credits to token holders, where voting on a proposal with one credit costs the participant one token, voting with two credits costs them four tokens, three credits costs nine tokens, and so on. This paradigm is useful for protocols and projects concerned about a small number of active investors acquiring an outsized voice in decisions. There is ongoing research into further improvements to voting paradigms that will enable protocols to better identify participants, particularly those making proposals, to prevent collusion among participants and further reduce the threat of sybil attacks where the attacker can increase influence through having many identities.
+
+Regardless of the voting paradigm, the power to vote lies in owning tokens, i.e. having a stake in that project, so the entire system boils down to a transaction between a blockchain wallet (a public/private key pair) holding those tokens and a smart contract codifying the rules of the vote.
+
+To explore the interaction between a wallet and the smart contract, we will explore governance on Compound, which is governed by COMP token holders.
+
+The process for voting on Compound includes:
+
+Delegating voting power
+Creating a proposal
+Voting on a proposal
+Delegating voting power
+
+In order to vote, a COMP holder must delegate their COMP either to their own Ethereum address or to another Ethereum address. This is enabled directly via the COMP smart contract.
+
+mapping (address => address) public delegates;
+mapping (address => uint96) internal balances;
+    
+function delegate(address delegatee) public {
+return _delegate(msg.sender, delegatee);
+}
+function _delegate(address delegator, address delegatee) internal {
+     address currentDelegate = delegates[delegator];
+     uint96 delegatorBalance = balances[delegator];
+     delegates[delegator] = delegatee;
+     emit DelegateChanged(delegator, currentDelegate, delegatee);
+     _moveDelegates(currentDelegate, delegatee, delegatorBalance);
+}
+event DelegateChanged(address indexed delegator, address indexed fromDelegate, address indexed toDelegate);
+Here, Compound enables the delegation of voting power between wallets, displaying two pieces of information that this transaction (delegate/_delegate) needs: the blockchain address to delegate to (delegatee) and the address to delegate from (delegator).
+
+The smart contract uses an internal mapping using the delegator’s address as the key to keep track of the address to which was last delegated. The contract also uses similar means to track the delegator’s balance and therefore voting power. With these mappings established, the contract sets the value of the new delegatee and then notifies the network that this is the delegator that is making the change, conveys the previous delegatee, and confirms the new delegatee.
+
+Next, the smart contract moves voting power from the previous delegatee to the new one (_moveDelegates).
+
+Voting power
+
+An interesting paradigm that COMP and other token projects have established is to establish voting power using the concept of “checkpoints”, e.g. an object that reflects that number of tokens that had been delegated to a given blockchain address at a particular block number. Checkpoints ensure that a given wallet address is only able to vote with the COMP delegated to this address at that block. When a proposal opens for voting, this prevents situations where a holder could amass a large amount of COMP to unfairly suddenly be able to influence the vote.
+
+With this in mind, we can think of voting power as the amount of COMP delegated to a given wallet address at the time the proposal is presented.
+
+Below, the code displays the change in delegatee:
+
+/// @notice The number of checkpoints for each account
+mapping (address => uint32) public numCheckpoints;
+/// @notice A record of votes checkpoints for each account, by index
+mapping (address => mapping (uint32 => Checkpoint)) public checkpoints;
+/// @notice A checkpoint for marking number of votes from a given block
+    struct Checkpoint {
+        uint32 fromBlock;
+        uint96 votes;
+    }
+function _moveDelegates(address srcRep, address dstRep, uint96 amount) internal {
+ if (srcRep != dstRep && amount > 0) {
+  if (srcRep != address(0)) {
+   uint32 srcRepNum = numCheckpoints[srcRep];
+   uint96 srcRepOld = srcRepNum > 0 ? checkpoints[srcRep][srcRepNum - 1].votes 
+    : 0;
+   uint96 srcRepNew = sub96(srcRepOld, amount, "Comp::_moveVotes: vote amount u
+    nderflows");
+   _writeCheckpoint(srcRep, srcRepNum, srcRepOld, srcRepNew);
+  }
+if (dstRep != address(0)) {
+   uint32 dstRepNum = numCheckpoints[dstRep];
+   uint96 dstRepOld = dstRepNum > 0 ? checkpoints[dstRep][dstRepNum - 1].votes 
+     : 0;
+      uint96 dstRepNew = add96(dstRepOld, amount, "Comp::_moveVotes: vote amount 
+     overflows");
+       _writeCheckpoint(dstRep, dstRepNum, dstRepOld, dstRepNew);
+    }
+  }
+}
+When an address moves delegate selections (_moveDelegates), it requires the current delegatee (srcRep), the new delegatee address (dstRep), and the amount that will be delegated to the delegatee (this is the COMP balance of the wallet)(amount).
+
+Before the move, the smart contract performs verification to check that the current delegatee and the new delegatee aren’t the same address, that the amount to be delegated is greater than zero, and whether the addresses of the current delegatee or the new delegatee are valid or burn addresses.
+
+When voting power is moved, a new checkpoint is created for both the current delegatee and the new delegatee. These are then indexed to view all delegations that address has been involved in.
+
+For example:
+
+Action: Alice delegates 20 COMP to Bob
+1. Result: At Checkpoint B.1, Bob has 20 COMP
+Action: Rick delegates 40 COMP to Bob
+1. Result: At Checkpoint B.2, Bob has 60 COMP
+Action: Alice redelegates her 20 COMP from Bob to Rick
+1. Result: At checkpoint B.3, Bob has 40 COMP
+2. At checkpoint R.1, Rick has 20 COMP
+Using the index of the checkpoint, the smart contract looks up the previous amount of COMP delegated to that address and adds the new COMP to that address and then writes a new checkpoint (_writeCheckpoint) to update the voting power of that address.
+
+function _writeCheckpoint(address delegatee, uint32 nCheckpoints,     uint96 oldVotes, 
+          uint96 newVotes) internal {
+  uint32 blockNumber = safe32(block.number, "Comp::_writeCheckpoint: block number exceeds 32 bits");
+     if (nCheckpoints > 0 && checkpoints[delegatee][nCheckpoints - 1].fromBlock == bl
+               ockNumber) {
+          checkpoints[delegatee][nCheckpoints - 1].votes = newVotes;
+     } else {
+          checkpoints[delegatee][nCheckpoints] = Checkpoint(blockNumber, newVotes);
+          numCheckpoints[delegatee] = nCheckpoints + 1;
+      }
+      emit DelegateVotesChanged(delegatee, oldVotes, newVotes);
+    }
+To do this, the information needed is the 1) address of the delegatee (delegatee), 2) the index to look up the checkpoint for that address (nCheckpoints), 3) the address’ previous voting power (oldVotes), and 4) the address’ new voting power (newVotes). The contract grabs the current block in the chain and then adds a new checkpoint using that block and the address’ new voting power.
+
+The result: the voting power granted to your COMP tokens will now be granted to the COMP user of your choosing (either your own account or another’s account).
+
+Notice that nowhere during this transaction did COMP actually leave an address. In fact, a transfer function was never called. This is where we get to see the really interesting multi-faceted potential of tokens as storers of value: monetary value, governance value, etc.
+
+Voting on a proposal
+
+Now that voting power has been delegated to the appropriate address, we can turn our attention to the next step in COMP’s governance structure which is voting on a proposal. Let’s take a look at the COMP governance smart contract to understand more deeply.
+
+In order to cast support for a proposal, some governance smart contracts have inherent functions:
+
+mapping (uint => Proposal) public proposals;
+struct Proposal {
+        uint id;
+        address proposer;
+        uint eta;
+        address[] targets;
+        uint[] values;
+        string[] signatures;
+        bytes[] calldatas;
+        uint startBlock;
+        uint endBlock;
+        uint forVotes;
+        uint againstVotes;
+        bool canceled;
+        bool executed;
+        mapping (address => Receipt) receipts;
+    }
+struct Receipt {
+        bool hasVoted;
+        bool support;
+        uint96 votes;
+    }
+function castVote(uint proposalId, bool support) public {
+        return _castVote(msg.sender, proposalId, support);
+    }
+function _castVote(address voter, uint proposalId, bool support) internal {
+    require(state(proposalId) == ProposalState.Active, "GovernorAlpha::_castVote: voting is closed");
+    Proposal storage proposal = proposals[proposalId];
+    Receipt storage receipt = proposal.receipts[voter];
+    require(receipt.hasVoted == false, "GovernorAlpha::_castVote: voter already voted");
+    uint96 votes = comp.getPriorVotes(voter, proposal.startBlock);
+if (support) {
+        proposal.forVotes = add256(proposal.forVotes, votes);
+    } else {
+        proposal.againstVotes = add256(proposal.againstVotes, votes);
+    }
+receipt.hasVoted = true;
+    receipt.support = support;
+    receipt.votes = votes;
+emit VoteCast(voter, proposalId, support, votes);
+}
+To cast a vote on a Compound proposal via smart contract, a wallet holder needs to supply the address casting the vote (i.e. the voter), the identification (id) of the proposal, and the “Yes” or “No” vote itself. When the vote is cast, the smart contract performs some verification. It checks that the proposal is still active and that the wallet address has not already voted on this proposal. Further, the contract also checks its existing receipts for the proposal using the voter’s address as an index to ensure that the voter hasn’t already voted on this proposal.
+
+After this, the governance smart contract then interfaces with the token smart contract to apply the voting power of the voter at the time of the proposal, essentially weighting the amount this vote will influence the decision by how many tokens the wallet address holds. It then references the proposals and depending on the vote updates the results: if the vote was in favor then the voter’s votes are added to the existing for votes, or if the vote was against the proposal then the votes are added to the existing against votes.
+
+Lastly, the contract updates the receipt to codify 1) that this address has cast a vote, 2) the vote, and 3) the number of votes that were cast, and a new event is emitted including the information pertinent to this vote.
+
+The key role of wallets
+
+A wallet holds the private keys associated with your blockchain addresses and signs transactions, enabling you to interact in the rapidly growing web3 world. Participation in new governance models is a series of such blockchain transactions that determines eligibility to vote, delegate voting power, create new proposals, and ultimately have a say in the direction of protocol-level decisions.
+
+Governance is just one form of interaction, but there are others that exist today like staking and vesting and many more ahead. As web3 continues to evolve, buying real world property and other forms of everyday commerce are likely to become a part of our interactions on the blockchain level.
+
+Anchorage Digital makes it safe and easy to interact with smart contracts while assets remain secure in Anchorage Digital Custody. We support participation on the blockchain directly from our platform as well as integrations so that you can safely transact in this new web3 world.
+
+Governance participation via Anchorage Digital
+
+For institutions looking to participate in governance, Anchorage Digital facilitates a safe and secure way to engage in important protocol decisions. Currently, we offer governance support for Aave, Celo, Compound, dYdX, Maker, Notional, and Uniswap. If you are interested in participating in governance with Anchorage Digital, please reach out to us at anchoragesales@anchorage.com.

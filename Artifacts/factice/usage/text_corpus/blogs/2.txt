@@ -1,0 +1,149 @@
+Ethereum
+Ethereum is a decentralized blockchain with smart contract functionality. Ether (Abbreviation: ETH;[a] sign: Ξ) is the native cryptocurrency of the platform. Among cryptocurrencies, ether is second only to bitcoin in market capitalization.[2][3] It is open-source software.
+
+Ethereum was conceived in 2013 by programmer Vitalik Buterin.[4] Additional founders of Ethereum included Gavin Wood, Charles Hoskinson, Anthony Di Iorio and Joseph Lubin.[5] In 2014, development work began and was crowdfunded, and the network went live on 30 July 2015.[6] Ethereum allows anyone to deploy permanent and immutable decentralized applications onto it, with which users can interact.[7] Decentralized finance (DeFi) applications provide financial instruments which do not directly rely on financial intermediaries like brokerages, exchanges, or banks. This facilitates borrowing against cryptocurrency holdings or lending them out for interest.[8][9] Ethereum also allows users to create and exchange non-fungible tokens (NFTs), which are tokens that can be tied to unique digital assets, such as images. Additionally, many other cryptocurrencies utilize the ERC-20 token standard on top of the Ethereum blockchain and have utilized the platform for initial coin offerings.
+
+On 15 September 2022, Ethereum transitioned its consensus mechanism from proof-of-work (PoW) to proof-of-stake (PoS) in an upgrade process known as "the Merge". This has cut Ethereum's energy usage by 99%
+
+History
+Founding (2013–2014)
+
+Ethereum co-founder Vitalik Buterin in 2015
+Ethereum was initially described in late 2013 in a white paper by Vitalik Buterin,[4][11] a programmer and co-founder of Bitcoin Magazine, that described a way to build decentralized applications.[12][13] Buterin argued to the Bitcoin Core developers that Bitcoin and blockchain technology could benefit from other applications besides money and that it needed a more robust language for application development[14]: 88  that could lead to attaching[clarification needed] real-world assets, such as stocks and property, to the blockchain.[15] In 2013, Buterin briefly worked with eToro CEO Yoni Assia on the Colored Coins project and drafted its white paper outlining additional use cases for blockchain technology.[16] However, after failing to gain agreement on how the project should proceed, he proposed the development of a new platform with a more robust scripting language—a Turing-complete programming language[17]—that would eventually become Ethereum.[14]
+
+Ethereum was announced at the North American Bitcoin Conference in Miami, in January 2014.[18] During the conference, Gavin Wood, Charles Hoskinson, and Anthony Di Iorio (who financed the project) rented a house in Miami with Buterin at which they could develop a fuller sense of what Ethereum might become.[18] Di Iorio invited friend Joseph Lubin, who invited reporter Morgen Peck, to bear witness.[18] Peck subsequently wrote about the experience in Wired.[19] Six months later the founders met again in Zug, Switzerland, where Buterin told the founders that the project would proceed as a non-profit. Hoskinson left the project at that time and soon after founded IOHK, a blockchain company responsible for Cardano.[18]
+
+Ethereum has an unusually long list of founders.[20] Anthony Di Iorio wrote: "Ethereum was founded by Vitalik Buterin, Myself, Charles Hoskinson, Mihai Alisie & Amir Chetrit (the initial 5) in December 2013. Joseph Lubin, Gavin Wood, & Jeffrey Wilcke were added in early 2014 as founders." Buterin chose the name Ethereum after browsing a list of elements from science fiction on Wikipedia. He stated, "I immediately realized that I liked it better than all of the other alternatives that I had seen; I suppose it was that [it] sounded nice and it had the word 'ether', referring to the hypothetical invisible medium that permeates the universe and allows light to travel."[18] Buterin wanted his platform to be the underlying and imperceptible medium for the applications running on top of it
+
+Development (2014)
+Formal development of the software underlying Ethereum began in early 2014 through a Swiss company, Ethereum Switzerland GmbH (EthSuisse).[22] The idea of putting executable smart contracts in the blockchain needed to be specified before it could be implemented in software. This work was done by Gavin Wood, then the chief technology officer, in the Ethereum Yellow Paper that specified the Ethereum Virtual Machine.[23][24] Subsequently, a Swiss non-profit foundation, the Ethereum Foundation (Stiftung Ethereum), was founded. Development was funded by an online public crowd sale from July to August 2014, in which participants bought the Ethereum value token (ether) with another digital currency, bitcoin. While there was early praise for the technical innovations of Ethereum, questions were also raised about its security and scalability.[12]
+
+Launch and the DAO event (2014–2016)
+Several codenamed prototypes of Ethereum were developed over 18 months in 2014 and 2015 by the Ethereum Foundation as part of their proof-of-concept series.[4] "Olympic" was the last prototype and public beta pre-release. The Olympic network gave users a bug bounty of 25,000 ether for stress-testing the Ethereum blockchain. On 30 July 2015, "Frontier" marked the official launch of the Ethereum platform, and Ethereum created its "genesis block".[4][25] The genesis block contained 8,893 transactions allocating various amounts of ether to different addresses, and a block reward of 5 ETH.[citation needed]
+
+Since the initial launch, Ethereum has undergone a number of planned protocol upgrades, which are important changes affecting the underlying functionality and/or incentive structures of the platform.[26][27] Protocol upgrades are accomplished by means of a hard fork.[citation needed]
+
+In 2016, a decentralized autonomous organization called The DAO—a set of smart contracts developed on the platform—raised a record US$150 million in a crowd sale to fund the project.[28] The DAO was exploited in June 2016 when US$50 million of DAO tokens were stolen by an unknown hacker.[29][30] The event sparked a debate in the crypto-community about whether Ethereum should perform a contentious "hard fork" to reappropriate the affected funds.[31] The fork resulted in the network splitting into two blockchains: Ethereum with the theft reversed, and Ethereum Classic which continued on the original chain.[32]
+
+Continued development and milestones (2017–present)
+In March 2017, various blockchain startups, research groups, and Fortune 500 companies announced the creation of the Enterprise Ethereum Alliance (EEA) with 30 founding members.[33] By May 2017, the nonprofit organization had 116 enterprise members, including ConsenSys, CME Group, Cornell University's research group, Toyota Research Institute, Samsung SDS, Microsoft, Intel, J. P. Morgan, Cooley LLP, Merck KGaA, DTCC, Deloitte, Accenture, Banco Santander, BNY Mellon, ING, and National Bank of Canada.[34][35] By July 2017, there were over 150 members in the alliance, including MasterCard, Cisco Systems, Sberbank, and Scotiabank.[36]
+
+By January 2018, ether was the second-largest cryptocurrency in terms of market capitalization, behind bitcoin.[37] As of 2021, it maintained that relative position.[2][3]
+
+In 2019, Ethereum Foundation employee Virgil Griffith was arrested by the US government for presenting at a blockchain conference in North Korea.[38] He would later plead guilty to one count of conspiring to violate the International Emergency Economic Powers Act in 2021.[39]
+
+In March 2021, Visa Inc. announced that it began settling stablecoin transactions using Ethereum.[40] In April 2021, JP Morgan Chase, UBS, and MasterCard announced that they were investing US$65 million into ConsenSys, a software development firm that builds Ethereum-related infrastructure.[41]
+
+There were two network upgrades in 2021. The first was "Berlin", implemented on 14 April 2021.[42] The second was "London", which took effect on 5 August.[43] The London upgrade included Ethereum Improvement Proposal ("EIP") 1559, a mechanism for reducing transaction fee volatility. The mechanism causes a portion of the ether paid in transaction fees for each block to be destroyed rather than given to the block proposer, reducing the inflation rate of ether and potentially resulting in periods of deflation.[44]
+
+On 27 August 2021, the blockchain experienced a brief fork that was the result of clients running different incompatible software versions.[45]
+Ethereum 2.0
+
+Ethereum enthusiasts gather for a Merge party in San Francisco in 2022.
+Ethereum 2.0 (Eth2) was a set of three or more upgrades, also known as "phases", meant to transition the network's consensus mechanism to proof-of-stake, and to scale the network's transaction throughput with execution sharding and an improved EVM architecture.[46]
+
+The switch from proof-of-work to proof-of-stake on 15 September 2022 has cut Ethereum's energy usage by 99%. However, the impact this has on global energy consumption and climate change may be limited since the computers previously used for mining ether may be used to mine other cryptocurrencies that are energy-intensive.[10]
+
+As of April 2023, 18.2 million ETH ($34.6 billion) was locked in the Ethereum 2.0 staking deposit contract.[47]
+
+Design
+Ether
+Ether (ETH) is the cryptocurrency generated in accordance with the Ethereum protocol as a reward to validators in a proof-of-stake system for adding blocks to the blockchain. Ether is represented in the state as an unsigned integer associated with each account, this being the account's ETH balance denominated in wei (1018 wei = 1 ether).[48] At the end of each epoch, new ETH is generated by the addition of protocol-specified amounts to the balances of all validators for that epoch, with the block proposers receiving the largest portion. Additionally, ether is the only currency accepted by the protocol as payment for the transaction fee. The transaction fee is composed of two parts: the base fee and the tip. The base fee is "burned" (deleted from existence) and the tip goes to the block proposer. The validator reward together with the tips provide the incentive to validators to keep the blockchain growing (i.e. to keep processing new transactions). Therefore, ETH is fundamental to the operation of the network. Ether may be "sent" from one account to another via a transaction, which simply entails subtracting the amount to be sent from the sender's balance and adding the same amount to the recipient's balance.[49]
+
+Ether is often erroneously referred to as "Ethereum".[50]
+
+Accounts
+There are two types of accounts on Ethereum: user accounts (also known as externally-owned accounts) and contracts. Both types have an ETH balance, may send ETH to any account, may call any public function of a contract or create a new contract, and are identified on the blockchain and in the state by an account address.[51]
+
+Contracts are the only type of account that has associated code (a set of functions and variable declarations) and contract storage (the values of the variables at any given time). A contract function may take arguments and may have return values. In addition to control flow statements, the body of a function may include instructions to send ETH, read from and write to the contract's storage, create temporary storage (memory) that vanishes at the end of the function, perform arithmetic and hashing operations, call the contract's own functions or public functions of other contracts, create new contracts, and query information about the current transaction or the blockchain.[52]
+
+Addresses
+Ethereum addresses are composed of the prefix "0x" (a common identifier for hexadecimal) concatenated with the rightmost 20 bytes of the Keccak-256 hash of the ECDSA public key (the curve used is the so-called secp256k1). In hexadecimal, two digits represent a byte, and so addresses contain 40 hexadecimal digits after the "0x", e.g. 0xb794f5ea0ba39494ce839613fffba74279579268. Contract addresses are in the same format, however, they are determined by sender and creation transaction nonce.[24]
+
+Virtual machine
+
+The number of daily confirmed Ethereum transactions as of April 2021
+The Ethereum Virtual Machine (EVM) is the runtime environment for transaction execution in Ethereum. It includes, among other things, a stack, memory, gas balance, program counter, and the state (including contract code). The EVM is stack-based, in that most instructions pop operands from the stack and push the result to the stack. The EVM is designed to be deterministic on a wide variety of hardware and operating systems, so that given a pre-transaction state and a transaction, each node produces the same post-transaction state, thereby enabling network consensus. The formal definition of the EVM is specified in the Ethereum Yellow Paper.[24][53] EVMs have been implemented in C++, C#, Go, Haskell, Java, JavaScript, Python, Ruby, Rust, Elixir, Erlang, and soon[when?] WebAssembly.[citation needed]
+
+Gas
+Gas is a unit of account within the EVM used in the calculation of the transaction fee, which is the amount of ETH a transaction's sender must pay to the network to have the transaction included in the blockchain. Each type of operation which may be performed by the EVM is hardcoded with a certain gas cost, which is intended to be roughly proportional to the monetary value of the resources (e.g. computation and storage) a node must expend or dedicate to perform that operation.[citation needed]
+
+When a sender is creating a transaction, the sender must specify a gas limit and gas price. The gas limit is the maximum amount of gas the sender is willing to use in the transaction, and the gas price is the amount of ETH the sender wishes to pay to the network per unit of gas used. A transaction may only be included in the blockchain at a block slot that has a base gas price less than or equal to the transaction's gas price. The portion of the gas price that is in excess of the base gas price is known as the tip and goes to the block proposer; the higher the tip, the more incentive a block proposer has to include the transaction in their block, and thus the quicker the transaction will be included in the blockchain. The sender buys the full amount of gas (i.e. their ETH balance is debited the amount: gas limit × gas price) up-front, at the start of the execution of the transaction, and is refunded at the end for any unused gas. If at any point the transaction does not have enough gas to perform the next operation, the transaction is reverted but the sender is still only refunded for the unused gas. In user interfaces, gas prices are typically denominated in gigawei (Gwei), a subunit of ETH equal to 10−9 ETH.[54]
+
+Applications
+The EVM's instruction set is Turing-complete.[24] Popular uses of Ethereum have included the creation of fungible (ERC-20) and non-fungible (ERC-721) tokens with a variety of properties, crowdfunding (e.g. initial coin offerings), decentralized finance, decentralized exchanges, decentralized autonomous organizations (DAOs), games, prediction markets, and gambling.[
+
+Contract source code
+Ethereum's smart contracts are written in high-level programming languages and then compiled down to EVM bytecode and deployed to the Ethereum blockchain. They can be written in Solidity (a language library with similarities to C and JavaScript), Serpent (similar to Python, but deprecated), Yul (an intermediate language that can compile to various different backends—EVM 1.0, EVM 1.5, and eWASM are planned), LLL (a low-level Lisp-like language), and Mutan (Go-based, but deprecated). There was also[when?] a research-oriented language under development called Vyper (a strongly-typed Python-derived decidable language).[citation needed] Source code and compiler information are usually published along with the launch of the contract so that users can see the code and verify that it compiles to the bytecode that is on-chain.
+
+One issue related to using smart contracts on a public blockchain is that bugs, including security holes, are visible to all but cannot be fixed quickly.[55] One example of this is the 2016 attack on The DAO, which could not be quickly stopped or reversed.[29]
+
+ERC-20 tokens
+The ERC-20 (Ethereum Request-for-Comments #20) Token Standard allows for fungible tokens on the Ethereum blockchain. The standard, proposed by Fabian Vogelsteller in November 2015, implements an API for tokens within smart contracts. The standard provides functions that include the transfer of tokens from one account to another, getting the current token balance of an account, and getting the total supply of the token available on the network. Smart contracts that correctly implement ERC-20 processes are called ERC-20 Token Contracts, and they keep track of created tokens on Ethereum. Numerous cryptocurrencies have launched as ERC-20 tokens and have been distributed through initial coin offerings.[56]
+
+Non-fungible tokens (NFTs)
+Main article: Non-fungible token
+Ethereum also allows for the creation of unique and indivisible tokens, called non-fungible tokens (NFTs).[57] Since tokens of this type are unique, they have been used to represent such things as collectibles, digital art, sports memorabilia, virtual real estate, and items within games.[58] The first NFT project, Etheria, a 3D map of tradable and customizable hexagonal tiles, was deployed to the network in October 2015 and demonstrated live at DEVCON1 in November of that year.[59] In 2021, Christie's sold a digital image with an NFT by Beeple for US$69.3 million, making him the third-most-valuable living artist in terms of auction prices at the time, although observers have noted that both the buyer and seller had a vested interest in driving demand for the artist's work.[60][61]
+
+Decentralized finance
+
+The web interface to Compound Finance's decentralized application where users can lend and borrow cryptocurrencies for interest
+Main article: Decentralized finance
+Decentralized finance (DeFi) offers traditional financial instruments in a decentralized architecture, outside of companies' and governments' control, such as money market funds which let users earn interest.[62] DeFi applications are typically accessed through a Web3-enabled browser extension or application, such as MetaMask, which allows users to directly interact with the Ethereum blockchain through a website.[63] Many of these DApps can connect and work together to create complex financial services.[64]
+
+Examples of DeFi platforms include MakerDAO and Compound.[65] Uniswap, a decentralized exchange for tokens on Ethereum grew from US$20 million in liquidity to US$2.9 billion in 2020.[66] As of October 2020, over US$11 billion was invested in various DeFi protocols.[67] Additionally, through a process called "wrapping", certain DeFi protocols allow synthetic versions of various assets (such as bitcoin, gold, and oil) to be tradeable on Ethereum and also compatible with all of Ethereum's major wallets and applications.[67]
+
+Enterprise software
+Ethereum-based software and networks, independent from the public Ethereum chain, are being tested by enterprise software companies.[68] Interested parties include Microsoft, IBM, JPMorgan Chase,[49] Deloitte, R3, and Innovate UK (cross-border payments prototype).[69] Barclays, UBS, Credit Suisse, Amazon, Visa, and other companies are also experimenting with Ethereum.[70][71]
+
+Permissioned ledgers
+Ethereum-based permissioned blockchain variants are used and being investigated for various projects:
+
+In 2017, JPMorgan Chase proposed developing JPM Coin on a permissioned-variant of Ethereum blockchain dubbed "Quorum".[72] It is "designed to toe the line between private and public in the realm of shuffling derivatives and payments. The idea is to satisfy regulators who need seamless access to financial goings-on while protecting the privacy of parties that don't wish to reveal their identities nor the details of their transactions to the general public."[73]
+Performance
+As of January 2016, the Ethereum protocol could process about 25 transactions per second; this did not change after the move to proof-of-stake. In comparison, the Visa payment platform processes 45,000 payments per second. This has led some to question the scalability of Ethereum.[74]
+
+A proposal to partition global state and computation into shard chains was presented at Ethereum's Devcon 3 in November 2017.[75] If implemented, each node in the network would only have to store and validate a subset of the network.
+
+Ethereum's blockchain uses a Merkle-Patricia Trie to store account state in each block.[76] The trie allows for storage savings, set membership proofs (called "Merkle proofs"), and light client synchronization. The network has faced congestion problems, such as in 2017 in relation to CryptoKitties.[77]
+
+Cryptocurrencies
+Technology	
+BlockchainCryptocurrency tumblerCryptocurrency walletCryptographic hash functionDecentralized exchangeDecentralized financeDistributed ledgerForkLightning NetworkMetaMaskNon-fungible tokenSmart contractWeb3
+Consensus mechanisms	
+Proof of authorityProof of spaceProof of stakeProof of work
+Proof of work currencies	
+SHA-256-based	
+BitcoinBitcoin CashCounterpartyLBRYMazaCoinNamecoinPeercoinTitcoin
+Ethash-based	
+Ethereum (1.0)Ethereum Classic
+Scrypt-based	
+AuroracoinBitconnectCoinyeDogecoinLitecoin
+Equihash-based	
+Bitcoin GoldZcash
+RandomX-based	
+Monero
+X11-based	
+DashPetro
+Other	
+AmbaCoinFiroIOTANervos NetworkPrimecoinVergeVertcoin
+Proof of stake currencies	
+AlgorandAvalancheCardanoEOS.IOEthereum (2.0)GridcoinKinNxtPeercoinPolkadotSolanaSteemTezosTRON
+ERC-20 tokens	
+AugurAventusBasic Attention TokenChainlinkKinKodakCoinMindsShiba InuThe DAOTRON
+Stablecoins	
+DaiDiemPaxTetherUSD Coin
+Other currencies	
+ChiaFilecoinHBAR (Hashgraph)HeliumMobileCoinNanoNEORippleSafeMoonStellarWhopperCoin
+Inactive currencies	
+BitConnectCoinyeKodakCoinOneCoinPetro
+Cryptocurrency exchanges	
+AbraBinanceBitfinexbitFlyerBitkubBitpandaBithumbBitMEXBitsoBitstampBTCCBUXCircleCoinbaseCoincheckCrypto.comEDX MarketseToroGeminiGenesisHuobiItBit (Paxos)KrakenKunaLocalBitcoinsOKXShapeShiftUniswapUpbitZaif (Tech Bureau)
+Defunct	
+BTC-eFTX bankruptcyMt. GoxQuadrigaCXThodex
+Crypto service companies	
+HyperledgerIQ.WikiInitiative Q
+Related topics	
+AirdropBitLicenseBlockchain gameComplementary currencyCrypto-anarchismCryptocurrency bubbleCryptocurrency in NigeriaCryptocurrency scamsDigital currencyDecentralized autonomous organizationDecentralized applicationDistributed ledger technology lawDouble-spendingEnvironmental impactInitial coin offeringInitial exchange offeringList of cryptocurrenciesToken moneyVirtual currency
+
+
