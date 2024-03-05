@@ -10,7 +10,7 @@ from .sender_in_constructor import SenderInConstructor
 
 
 class DatabaseClient:
-    def __init__(self, host=None, port=3306, database=None, user="root", password="123456"):
+    def __init__(self, host=None, port=3306, database=None, user="", password=""):
         self.__host: str = host
         self.__port: int = port
         self.__database: str = database

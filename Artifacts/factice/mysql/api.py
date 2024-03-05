@@ -16,7 +16,7 @@ SMART_CONTRACT_TEST = "smart_contract_test"
 
 class DatabaseApi:
     def __init__(self):
-        self.__databaseClient: DatabaseClient = DatabaseClient(host="114.212.247.243", database=FACTICE_DATA)
+        self.__databaseClient: DatabaseClient = DatabaseClient(host="", database=FACTICE_DATA)
 
     '''
     保存一个合约文件，参数为一个合约实体，按合约实体的参数填满即可
