@@ -1546,19 +1546,24 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
                     """
                     # 第2.1种情况
                     _inline_asm = node.inline_asm
-                    if "AST" in _inline_asm and isinstance(_inline_asm, Dict):
-                        for statement in _inline_asm["AST"]["statements"]:
-                            if statement["nodeType"] == "YulAssignment":
-                                statement = statement["value"]
-                            if statement["nodeType"] == "YulFunctionCall":
-                                if statement["functionName"]["name"] == "create":
-                                    self._is_create_facfn = True
-                                    self._create_factory_nodes.append((node, statement))
-                                if statement["functionName"]["name"] == "create2":
-                                    self._is_create2_facfn = True
-                                    self._create2_factory_nodes.append((node, statement))
 
-                        self._is_facfn = self._is_create_facfn or self._is_create2_facfn
+                    if "AST" in _inline_asm and isinstance(_inline_asm, Dict):
+                        is_factory_fn = False
+                        for statement in _inline_asm["AST"]["statements"]:
+                            if self.dfs_statement_to_find_create_op(statement):
+                                is_factory_fn = True
+                                break
+                            # if statement["nodeType"] == "YulAssignment":
+                            #     statement = statement["value"]
+                            # if statement["nodeType"] == "YulFunctionCall":
+                            #     if statement["functionName"]["name"] == "create":
+                            #         self._is_create_facfn = True
+                            #         self._create_factory_nodes.append((node, statement))
+                            #     if statement["functionName"]["name"] == "create2":
+                            #         self._is_create2_facfn = True
+                            #         self._create2_factory_nodes.append((node, statement))
+
+                        self._is_facfn = is_factory_fn
 
                     # 第2.2种情况,将字符串根据换行符进行分割，得到每一个statement
                     else:
@@ -1574,6 +1579,21 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
 
         return self._is_facfn
 
+    def dfs_statement_to_find_create_op(self, statement: dict) -> bool:
+        if statement["nodeType"] == "YulFunctionCall":
+            if statement["functionName"]["name"] in ["create", "create2"]:
+                return True
+        else:
+            for k, v in statement.items():
+                if isinstance(v, dict) and "nodeType" in v:
+                    if self.dfs_statement_to_find_create_op(v):
+                        return True
+                elif isinstance(v, list):
+                    for vitem in v:
+                        if isinstance(vitem, dict) and "nodeType" in vitem:
+                            if self.dfs_statement_to_find_create_op(vitem):
+                                return True
+            return False
     @property
     def create_factory_nodes(self) -> List[Tuple["Node", Union[str, Dict]]]:
         return self._create_factory_nodes

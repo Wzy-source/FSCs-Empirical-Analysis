@@ -7,12 +7,8 @@ import os
 from api_config import api_keys
 import random
 
-# 数据库原始数据集，在遍历的过程中，可能会加入一些后续请求得到的数据集
-total_contract_num = 327681
-start_id = 0
 
-
-def preprocess_contracts(start):
+def preprocess_contracts():
     """
     合约预处理
     依次从数据库中取合约名、编译器版本、源码字符串，保存为临时文件
@@ -21,18 +17,26 @@ def preprocess_contracts(start):
     直到分析到数据库中最后一个合约为止
     """
     # 统计数据
-    traversed_num = start
     db_client = DatabaseApi()
     # 获取数据库首个合约文件
-    contract = db_client.traversal_contract_file(start)
-    while contract is not None:
+    contracts = db_client.select_all_contract_file_ids("mainnet")
+    traversed_num = 0
+    for contract in contracts:
         traversed_num += 1
+        # 先请求Create Tx
+        # 查找当前地址所有交易
+        create_txs = fetch_create_txs(target_address)
+        contains_create_txs = True if (create_txs is not None) and (len(create_txs) > 0) else False
+        first_tx_hash = ""
+        if contains_create_txs:
+            first_tx_hash = create_txs[0]['hash']
+
         # 编译前预检查，排除一定不是工厂的可能性，减少因为编译造成的时间消耗
         if not must_not_factory(contract.name, contract.source_code):
             # 设置本地编译器版本,有些版本号可能以"v"开头，将v去除
             print(
                 f"contract name:{contract.name} id:{contract.id} address:{contract.address} 合约可能是factory合约，进行预处理")
-            # set_solc_version(contract.compiler)
+            set_solc_version(contract.compiler)
             # 保存一个.sol临时文件到$HOME环境变量下
             # 有些合约是后来保存的，可能是未被验证的合约，没有源代码
             if contract.name and contract.source_code and contract.address:
@@ -46,14 +50,8 @@ def preprocess_contracts(start):
                     print(f"执行detector:scf_preprocessor时出错{e}")
                 # 删除file_path下的文件
                 delete_temp_project(project_path)
-        # 遍历下一个文件
-        contract = db_client.traversal_contract_file(contract.id)
-        # 更新新的start_id,用于程序崩溃时重新在数据库中start的位置
-        global start_id
-        start_id = contract.id
-        print(f"preprocess_contracts start_id更新为{start_id}")
 
-        traverse_percentage = "{:.2f}%".format((traversed_num / total_contract_num) * 100)
+        traverse_percentage = "{:.2f}%".format((traversed_num / len(contracts)) * 100)
         print(
             f"已遍历合约:{traversed_num},遍历进度约为:{traverse_percentage}")
     print("Contracts Preprocess Complete!")
@@ -88,16 +86,16 @@ def set_solc_version(required_version):
     print(f"成功切换到 Solidity {required_version}")
 
 
-def save_temp_project(project_path, target_file_name, source_code) -> str:
-    """
-    两种情况：
-    1.source_code为源码形式
-    2.source_code为standard_json形式
-    """
-    if not source_code.startswith("{{"):
-        return save_sol_code_to_file(source_code, project_path, target_file_name)
-    else:
-        return save_standard_json_to_project(source_code, project_path, target_file_name)
+# def save_temp_project(project_path, target_file_name, source_code) -> str:
+#     """
+#     两种情况：
+#     1.source_code为源码形式
+#     2.source_code为standard_json形式
+#     """
+#     if not source_code.startswith("{{"):
+#         return save_sol_code_to_file(source_code, project_path, target_file_name)
+#     else:
+#         return save_standard_json_to_project(source_code, project_path, target_file_name)
 
 
 def save_sol_code_to_file(source_code, project_path, target_file_name):
@@ -214,9 +212,8 @@ def must_not_factory(name, source_code: str) -> bool:
             language, sources = info['language'], info['sources']
             if language == 'Solidity':
                 for file_path, file, in sources.items():
-                    contract_name = file_path.replace('.sol', '').split("/")[-1]
-                    if contract_name == name:  # main contract
-                        return must_not_factory_contract(maybe_contract_names, file['content'])
+                    if not must_not_factory_contract(maybe_contract_names, file['content']):
+                        return False
             return True
         else:  # 无依赖合约形式
             return must_not_factory_contract(maybe_contract_names, source_code)
@@ -225,6 +222,8 @@ def must_not_factory(name, source_code: str) -> bool:
 
 
 if __name__ == "__main__":
+    # project_path = os.path.join(os.environ['HOME'], 'tempcode')
+    # call_scf_preprocessor("0x0000000000FFe8B47B3e2130213B802212439497", project_path)
     preprocess_contracts(start_id)
 
 """

@@ -93,7 +93,7 @@ from .operations.cache_array_length import CacheArrayLength
 from .statements.incorrect_using_for import IncorrectUsingFor
 from .operations.encode_packed import EncodePackedCollision
 # Factory related detectors
-# from .factice.scf_preprocessor import SCFPreprocessor
+from .factice.scf_preprocessor import SCFPreprocessor
 # from .factice.scf_explorer import SCFExplorer
 from .factice.created_security import CreatedSecurity
 from .factice.factory_security import FactorySecurity

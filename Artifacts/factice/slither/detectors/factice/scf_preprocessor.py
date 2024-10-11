@@ -9,7 +9,7 @@ from slither.utils.output import Output
 import requests
 import os
 import shutil
-from mysql.api import DatabaseApi, ContractFile, ContractRelation
+from mysql.api import DatabaseApi
 
 # 测试地址
 create2_factory_addr_test = "0x0000000000FFe8B47B3e2130213B802212439497"
@@ -33,14 +33,24 @@ class SCFPreprocessor(AbstractDetector):
     """
 
     def _detect(self) -> List[Output]:
-        db_client = DatabaseApi()
         target_address = self.slither.crytic_compile.target
-        chain = "mainnet"
-        contract_file = db_client.find_contract_file_by_chain_and_address(chain, target_address)
-        target_contract = find_target_contract(self.contracts, contract_file.name)
-        if target_contract and target_contract.is_factory:
-            print(f"{contract_file.name},{target_address}是工厂合约，已更新其contract_type")
-            db_client.update_contract_type(chain, target_address, 'factory')
+        # chain = "mainnet"
+        # # contract_file = db_client.find_contract_file_by_chain_and_address(chain, target_address)
+        # target_contract = find_target_contract(self.contracts, contract_file.name)
+        # target_contract = self.slither.get_contract_from_name()
+        # if target_contract and target_contract.is_factory:
+        #     print(f"{contract_file.name},{target_address}是工厂合约，已更新其contract_type")
+        #     db_client.update_contract_type(chain, target_address, 'factory')
+        # target_address = "0x0000000000FFe8B47B3e2130213B802212439497"
+        is_factory_detect = False
+        for contract in self.contracts:
+            if contract.is_factory:
+                print(f"{target_address}是工厂合约")
+                is_factory_detect = True
+        print(f"factory detect result:{is_factory_detect}")
+
+        return [self.generate_result([f"factory detect result:{is_factory_detect}"])]
+
         # factory_addr, txhash = fetch_creator_addr_and_txhash(target_address)
         # # bug：这里的creator一定是外部账户(tx.origin)
         # while not is_eoa_addr(factory_addr):
@@ -108,8 +118,6 @@ class SCFPreprocessor(AbstractDetector):
         #         gas_used=txinfo['gasUsed'],
         #         time_stamp=txinfo['timeStamp']
         #     ))
-
-        return []
 
 
 """

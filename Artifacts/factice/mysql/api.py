@@ -2,6 +2,7 @@ from .contract_file_node import ContractFileNode
 from .dao.address_validation import AddressValidation
 from .dao.contract_file import ContractFile
 from .dao.contract_relation import ContractRelation
+from .dao.fsc_validation import FSC_Validation
 from .dao.database_client import DatabaseClient
 from .dao.implement_contract_validation import ImplementContractValidation
 from .dao.potential_metamorphic_contract import PotentialMetamorphicContract
@@ -16,7 +17,7 @@ SMART_CONTRACT_TEST = "smart_contract_test"
 
 class DatabaseApi:
     def __init__(self):
-        self.__databaseClient: DatabaseClient = DatabaseClient(host="", database=FACTICE_DATA)
+        self.__databaseClient: DatabaseClient = DatabaseClient(host="172.29.7.210", database=FACTICE_DATA)
 
     '''
     保存一个合约文件，参数为一个合约实体，按合约实体的参数填满即可
@@ -315,3 +316,18 @@ class DatabaseApi:
         self.__databaseClient.check_connection()
         address = address.lower()
         return self.__databaseClient.select_implement_contract_validation_by_chain_and_address(chain, address)
+
+    def select_fsc_validation_by_contract_file_id(self, contract_file_id: int):
+        self.__databaseClient.check_connection()
+        res = self.__databaseClient.select_fsc_validation_by_contract_file_id(contract_file_id)
+        return res
+
+    def select_all_contract_file_ids(self, chain):
+        self.__databaseClient.check_connection()
+        res = self.__databaseClient.select_all_contract_file_ids(chain)
+        return res
+
+    def save_fsc_validation_res(self, validation_res: FSC_Validation):
+        self.__databaseClient.check_connection()
+        res = self.__databaseClient.save_fsc_validation_res(validation_res)
+        return res

@@ -7,10 +7,11 @@ from .contract_relation import ContractRelation
 from .implement_contract_validation import ImplementContractValidation
 from .potential_metamorphic_contract import PotentialMetamorphicContract
 from .sender_in_constructor import SenderInConstructor
+from .fsc_validation import FSC_Validation
 
 
 class DatabaseClient:
-    def __init__(self, host=None, port=3306, database=None, user="", password=""):
+    def __init__(self, host=None, port=3306, database=None, user="root", password="123456"):
         self.__host: str = host
         self.__port: int = port
         self.__database: str = database
@@ -150,10 +151,10 @@ class DatabaseClient:
 
     def update_contract_file_by_id(self, contract_file: ContractFile):
         sql: str = ("update contract_file set chain=%s,address=%s,name=%s,is_factory=%s,is_created=%s,compiler=%s,"
-                    "balance=%s,txcount=%s,create_date=%s,source_code=%s,fixed=%s where id = %s")
+                    "balance=%s,txcount=%s,create_date=%s,source_code=%s,fixed=%s,is_factory_truth=%s where id = %s")
         values: tuple = (contract_file.chain, contract_file.address, contract_file.name, contract_file.is_factory,
                          contract_file.is_created, contract_file.compiler, contract_file.balance, contract_file.txcount,
-                         contract_file.create_date, contract_file.source_code, contract_file.fixed, contract_file.id)
+                         contract_file.create_date, contract_file.source_code, contract_file.fixed, contract_file.is_factory_truth, contract_file.id)
         cursor: Cursor = self.__client.cursor()
         cursor.execute(sql, values)
         self.__client.commit()
@@ -246,7 +247,7 @@ class DatabaseClient:
         if is_created is not None:
             sql_2 = sql_2 + " and is_created=%s "
             values.append(is_created)
-        sql = sql_1+sql_2+sql_3
+        sql = sql_1 + sql_2 + sql_3
         cursor: Cursor = self.__client.cursor()
         cursor.execute(sql, values)
         self.__client.commit()
@@ -255,10 +256,10 @@ class DatabaseClient:
 
     def select_factory_total_contract_count(self):
         sql = "select count(*) as factory_num, txcount " \
-           "from contract_file " \
-           "where is_factory=1 " \
-           "group by txcount " \
-           "order by txcount"
+              "from contract_file " \
+              "where is_factory=1 " \
+              "group by txcount " \
+              "order by txcount"
         cursor: Cursor = self.__client.cursor()
         cursor.execute(sql)
         self.__client.commit()
@@ -277,7 +278,7 @@ class DatabaseClient:
         res = cursor.fetchall()
         return self.__extract_all_from_tuple(res)
 
-    def select_id_by_chain_and_type(self,chain:str,is_factory=None, is_created=None):
+    def select_id_by_chain_and_type(self, chain: str, is_factory=None, is_created=None):
         sql: str = ("select min(id) from contract_file where chain=%s and source_code is not null "
                     "and source_code <> '' ")
         values: list = [chain]
@@ -430,11 +431,11 @@ class DatabaseClient:
                     "check_addr_equal,check_extcode,check_addr0 ) "
                     "values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)")
         values: tuple = (address_validation.chain, address_validation.address, address_validation.process_start,
-                         address_validation.process_end,address_validation.execute_time,address_validation.crashed,
-                         address_validation.has_source_code,address_validation.factory_fn_not_found,
-                         address_validation.addr_name_not_found,address_validation.by_new,address_validation.by_create,
-                         address_validation.by_create2,address_validation.check_addr_equal,
-                         address_validation.check_extcode,address_validation.check_addr0)
+                         address_validation.process_end, address_validation.execute_time, address_validation.crashed,
+                         address_validation.has_source_code, address_validation.factory_fn_not_found,
+                         address_validation.addr_name_not_found, address_validation.by_new, address_validation.by_create,
+                         address_validation.by_create2, address_validation.check_addr_equal,
+                         address_validation.check_extcode, address_validation.check_addr0)
         cursor: Cursor = self.__client.cursor()
         cursor.execute(sql, values)
         ret = self.__client.insert_id()
@@ -449,13 +450,12 @@ class DatabaseClient:
         values: tuple = (address_validation.chain, address_validation.address, address_validation.process_start,
                          address_validation.process_end, address_validation.execute_time, address_validation.crashed,
                          address_validation.has_source_code, address_validation.factory_fn_not_found,
-                         address_validation.addr_name_not_found, address_validation.by_new,address_validation.by_create,
+                         address_validation.addr_name_not_found, address_validation.by_new, address_validation.by_create,
                          address_validation.by_create2, address_validation.check_addr_equal,
-                         address_validation.check_extcode, address_validation.check_addr0,address_validation.id)
+                         address_validation.check_extcode, address_validation.check_addr0, address_validation.id)
         cursor: Cursor = self.__client.cursor()
         cursor.execute(sql, values)
         self.__client.commit()
-
 
     def select_implement_contract_validation_by_chain_and_address(self, chain, address):
         sql: str = "select * from implement_contract_validation where chain=%s and address=%s"
@@ -482,13 +482,13 @@ class DatabaseClient:
                     "check_fn_call,external_address,internal_address,in_whitelist ) "
                     "values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)")
         values: tuple = (implement_contract_validation.chain, implement_contract_validation.address,
-                         implement_contract_validation.process_start,implement_contract_validation.process_end,
-                         implement_contract_validation.execute_time,implement_contract_validation.crashed,
+                         implement_contract_validation.process_start, implement_contract_validation.process_end,
+                         implement_contract_validation.execute_time, implement_contract_validation.crashed,
                          implement_contract_validation.has_source_code,
                          implement_contract_validation.is_clone_based_factory,
-                         implement_contract_validation.not_check,implement_contract_validation.check_addr0,
-                         implement_contract_validation.check_is_contract,implement_contract_validation.check_fn_call,
-                         implement_contract_validation.external_address,implement_contract_validation.internal_address,
+                         implement_contract_validation.not_check, implement_contract_validation.check_addr0,
+                         implement_contract_validation.check_is_contract, implement_contract_validation.check_fn_call,
+                         implement_contract_validation.external_address, implement_contract_validation.internal_address,
                          implement_contract_validation.in_whitelist)
         cursor: Cursor = self.__client.cursor()
         cursor.execute(sql, values)
@@ -502,14 +502,43 @@ class DatabaseClient:
             "crashed=%s,has_source_code=%s,is_clone_based_factory=%s,not_check=%s,check_addr0=%s,check_is_contract=%s,"
             "check_fn_call=%s,external_address=%s,internal_address=%s,in_whitelist=%s where id = %s")
         values: tuple = (implement_contract_validation.chain, implement_contract_validation.address,
-                         implement_contract_validation.process_start,implement_contract_validation.process_end,
+                         implement_contract_validation.process_start, implement_contract_validation.process_end,
                          implement_contract_validation.execute_time, implement_contract_validation.crashed,
                          implement_contract_validation.has_source_code,
                          implement_contract_validation.is_clone_based_factory,
                          implement_contract_validation.not_check, implement_contract_validation.check_addr0,
-                         implement_contract_validation.check_is_contract,implement_contract_validation.check_fn_call,
-                         implement_contract_validation.external_address,implement_contract_validation.internal_address,
-                         implement_contract_validation.in_whitelist,implement_contract_validation.id)
+                         implement_contract_validation.check_is_contract, implement_contract_validation.check_fn_call,
+                         implement_contract_validation.external_address, implement_contract_validation.internal_address,
+                         implement_contract_validation.in_whitelist, implement_contract_validation.id)
         cursor: Cursor = self.__client.cursor()
         cursor.execute(sql, values)
         self.__client.commit()
+
+    def select_fsc_validation_by_contract_file_id(self, contract_file_id):
+        sql: str = "select * from FSC_Detector_Validation where contract_file_id=%s"
+        cursor: Cursor = self.__client.cursor()
+        cursor.execute(sql, contract_file_id)
+        self.__client.commit()
+        dictionary = self.__build_dict_by_cursor(cursor)
+        res = FSC_Validation()
+        return res.convert(dictionary)
+
+    def select_all_contract_file_ids(self, chain):
+        sql: str = "select id from contract_file where chain = %s"
+        cursor: Cursor = self.__client.cursor()
+        cursor.execute(sql, chain)
+        self.__client.commit()
+        res = cursor.fetchall()
+        return self.__extract_id_from_tuple(res)
+
+    def save_fsc_validation_res(self, validation_res: FSC_Validation):
+        sql = ("insert into FSC_Validation (name,address,contain_create_tx,is_factory_detect,contract_file_id,chain,create_tx_hash)"
+               "values (%s,%s,%s,%s,%s,%s,%s)")
+        values: tuple = (validation_res.name, validation_res.address, validation_res.contain_create_tx, validation_res.is_factory_detect,
+                         validation_res.contract_file_id, validation_res.chain, validation_res.create_txhash)
+
+        cursor: Cursor = self.__client.cursor()
+        cursor.execute(sql, values)
+        ret = self.__client.insert_id()
+        self.__client.commit()
+        return ret
